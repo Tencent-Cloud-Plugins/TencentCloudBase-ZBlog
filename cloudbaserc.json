@@ -1,0 +1,61 @@
+{
+  "version": "2.0",
+  "envId": "{{env.ENV_ID}}",
+  "framework": {
+    "name": "Z-BlogPHP",
+    "plugins": {
+      "client": {
+        "use": "@cloudbase/framework-plugin-container",
+        "inputs": {
+          "serviceName": "zblog",
+          "servicePath": "/",
+          "uploadType": "image",
+          "imageInfo": {
+            "imageUrl": "ccr.ccs.tencentyun.com/tcbimages/z-blog:1.6.8"
+          },
+          "containerPort": 80,
+          "customLogs": "stdout,/dev/stdout,/dev/stderr",
+          "envVariables": {
+            "ZC_DB_HOST": "{{env.DB_IP}}:{{env.DB_PORT}}",
+            "ZC_DB_USER": "root",
+            "ZC_DB_PWDD": "{{env.MYSQL_PASSWORD}}",
+            "ZC_DB_NAME": "tcb-zblog",
+            "ZC_BLOG_USER": "{{env.ZBLOG_USERNAME}}",
+            "ZC_BLOG_PWDD": "{{env.ZBLOG_PASSWORD}}",
+            "BASE_URL": "https://${TcbHttpServiceDefaultDomain}"
+          },
+          "volumeMounts": {
+            "/bitnami/joomla": "zblog-cfs"
+          }
+        }
+      }
+    },
+    "requirement": {
+      "addons": [{
+        "type": "CFS",
+        "name": "zblog-cfs"
+      }, {
+        "type": "CynosDB",
+        "name": "zblog",
+        "envMap": {
+          "IP": "DB_IP",
+          "PORT": "DB_PORT",
+          "USERNAME": "MYSQL_USERNAME",
+          "PASSWORD": "MYSQL_PASSWORD"
+        }
+      }],
+      "environment": {
+        "ZBLOG_USERNAME": {
+          "description": "后台管理系统管理员账号",
+          "required": true,
+          "default": "admin"
+        },
+        "ZBLOG_PASSWORD": {
+          "description": "后台管理系统管理员密码",
+          "required": true,
+          "default": "admin"
+        }
+      }
+    }
+  }
+}
