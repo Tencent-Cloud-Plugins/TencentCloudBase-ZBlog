@@ -11,7 +11,7 @@
           "servicePath": "/",
           "uploadType": "image",
           "imageInfo": {
-            "imageUrl": "ccr.ccs.tencentyun.com/tcbimages/z-blog:1.6.9"
+            "imageUrl": "ccr.ccs.tencentyun.com/tcbimages/z-blog:1.6.10"
           },
           "containerPort": 80,
           "customLogs": "stdout,/dev/stdout,/dev/stderr",
