@@ -1,5 +1,5 @@
 <p align="center">
-  <img height="100px" src="./logo.png" />
+  <img height="100px" src="./zblog.jpeg" />
 </p>
 
 # [ZBlog](https://github.com/zblogcn/zblogphp)
