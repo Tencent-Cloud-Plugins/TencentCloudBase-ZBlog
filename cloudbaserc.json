@@ -17,7 +17,7 @@
           "customLogs": "stdout,/dev/stdout,/dev/stderr",
           "envVariables": {
             "ZC_DB_HOST": "{{env.DB_IP}}:{{env.DB_PORT}}",
-            "ZC_DB_USER": "root",
+            "ZC_DB_USER": "{{env.MYSQL_USERNAME}}",
             "ZC_DB_PWDD": "{{env.MYSQL_PASSWORD}}",
             "ZC_DB_NAME": "tcb-zblog",
             "ZC_BLOG_USER": "{{env.ZBLOG_USERNAME}}",
