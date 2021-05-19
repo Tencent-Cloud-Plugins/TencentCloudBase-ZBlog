@@ -25,7 +25,7 @@
             "BASE_URL": "https://${TcbHttpServiceDefaultDomain}"
           },
           "volumeMounts": {
-            "/bitnami/joomla": "zblog-cfs"
+            "/app": "zblog-cfs"
           }
         }
       }
