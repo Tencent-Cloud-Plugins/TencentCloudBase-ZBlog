@@ -22,8 +22,10 @@
             "ZC_DB_NAME": "tcb_zblog",
             "ZC_BLOG_USER": "{{env.ZBLOG_USERNAME}}",
             "ZC_BLOG_PWDD": "{{env.ZBLOG_PASSWORD}}",
-            "BASE_URL": "https://${TcbHttpServiceDefaultDomain}"
+            "BASE_URL": "https://${TcbHttpServiceDefaultDomain}",
+            "TCB_NOT_SHOW_CYNOS_DB": "${Outputs.zblog.Properties.InstanceId}"
           },
+          "initialDelaySeconds": 10,
           "volumeMounts": {
             "/app/zb_users/upload": "zblog-cfs"
           }
